@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Performance Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 AI Student Performance Analyzer</h1>
+
+    <form method="POST">
+        <input type="number" name="math" placeholder="Math Score" required>
+        <input type="number" name="reading" placeholder="Reading Score" required>
+        <input type="number" name="writing" placeholder="Writing Score" required>
+        <input type="number" name="attendance" placeholder="Attendance %" required>
+
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Result: {{ prediction }}</h2>
+        <img src="{{ chart }}" alt="Performance Chart">
+    {% endif %}
+</div>
+
+</body>
+</html>
